@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../assets/scss/pages/HomePage.scss';
-import BusinessList from '../components/BusinessList/BusinessList.jsx';
-import SearchBar from '../components/SearchBar/SearchBar.jsx';
+import BusinessList from '../components/BusinessList.jsx';
+import SearchBar from '../components/SearchBar.jsx';
 
 class HomePage extends React.Component {
   render() {

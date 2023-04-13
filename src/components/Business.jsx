@@ -1,5 +1,5 @@
 import React from "react"
-import './Business.css'
+import '../assets/scss/components/Business.scss'
 
 let business = {
     imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
