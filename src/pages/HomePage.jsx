@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from 'react';
 import '../assets/scss/pages/HomePage.scss';
 import BusinessList from '../components/BusinessList.jsx';
 import SearchBar from '../components/SearchBar.jsx';
+import { AppState } from "../AppState.js";
 
-class HomePage extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>ravenous</h1>
-        <SearchBar />
-        <BusinessList />
-      </div>
-    )
-  }
+function HomePage() {
+  return (
+    <div className="App">
+      <h1>ravenous</h1>
+      <SearchBar />
+      <BusinessList businesses={AppState.businesses} />
+    </div>
+  )
 }
 
-export default HomePage
+export default HomePage;
 
 // export default function HomePage() {
 //   const [count, setCount] = useState(0)
