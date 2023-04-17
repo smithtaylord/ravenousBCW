@@ -29,7 +29,7 @@ const search = async(e) => {
         <div className="componentName">
             <div className="SearchBar">
                 <div className="SearchBar-sort-options">
-                    <ul>
+                    <ul className="d-flex justify-content-center">
                         <li onClick={() => handleSort('best_match')} 
                         className={sortBy == 'best_match' ? 'px-5 active' : 'px-5'}>
                             Best Match</li>
