@@ -6,11 +6,13 @@ import { AppState } from "../AppState.js";
 class BusinessList extends React.Component {
     render() {
         return (
-            <div className="BusinessList">
+            <div className="row">
                 {AppState.businesses.map(b => {
-                    return <Business
-                        key={b.id}
-                        business={b} />
+                    return (
+                        <div key={b.id} className="col-6 col-lg-4 mt-3">
+                            <Business business={b} />
+                        </div>
+                    )
                 })}
             </div>
         )

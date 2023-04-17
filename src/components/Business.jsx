@@ -9,21 +9,24 @@ class Business extends React.Component {
 
 
         return (
-            <div className="Business">
-                <div className="image-container">
-                    <img src={business.imageSrc} alt={business.name} />
+            <div className="rounded elevation-3">
+                <div className="">
+                    <img
+                        src={business.imageSrc}
+                        alt={business.name}
+                        className="img-fluid rounded-top" />
                 </div>
-                <h2>{business.name}</h2>
-                <div className="Business-information">
-                    <div className="Business-address">
-                        <p>{business.address}</p>
-                        <p>{business.city}</p>
-                        <p>{business.state} {business.zipCode}</p>
+                <h2 className="fs-3 p-3 clipped">{business.name}</h2>
+                <div className="d-flex justify-content-between px-3">
+                    <div className="">
+                        <div>{business.address}</div>
+                        <div>{business.city}</div>
+                        <div>{business.state} {business.zipCode}</div>
                     </div>
-                    <div className="Business-reviews">
-                        <h3>{business.category}</h3>
-                        <h3 className="rating">{business.rating} stars</h3>
-                        <p>{business.reviewCount} reviews</p>
+                    <div className="pb-2">
+                        <h3 className="font-yellow fs-4">{business.category}</h3>
+                        <h3 className="font-yellow fs-5">{business.rating} stars</h3>
+                        <div>{business.reviewCount} reviews</div>
                     </div>
                 </div>
             </div>

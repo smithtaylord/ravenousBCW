@@ -10,21 +10,21 @@ import { businessService } from '../services/BusinessService.js'
 
 
 function HomePage() {
-  const term = 'pizza'
-  const location = 'Boise'
-  const sortBy = 'best_match'
+  // const term = 'pizza'
+  // const location = 'Boise'
+  // const sortBy = 'best_match'
 
-  async function getTestBusinesses() {
-    try {
-      await businessService.getTestBusinesses(term, location, sortBy)
-    } catch (error) {
-      Pop.error(error, '[get test businesses]')
-    }
-  }
+  // async function getTestBusinesses() {
+  //   try {
+  //     await businessService.getTestBusinesses(term, location, sortBy)
+  //   } catch (error) {
+  //     Pop.error(error, '[get test businesses]')
+  //   }
+  // }
   // NOTE The [] at the end is very important, without it this function will run every second
-  useEffect(() => {
-    getTestBusinesses()
-  }, [])
+  // useEffect(() => {
+  //   getTestBusinesses()
+  // }, [])
 
   return (
 
@@ -32,7 +32,9 @@ function HomePage() {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <BusinessList businesses={AppState.businesses} />
+        <div className="container">
+          <BusinessList businesses={AppState.businesses} />
+        </div>
       </div>
     </div>
   )
