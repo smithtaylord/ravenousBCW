@@ -1,28 +1,16 @@
 import React from "react";
 import '../assets/scss/components/SearchBar.scss'
 
-const sortByOptions = {
-    'Best Match': 'best_match',
-    'Highest Rated': 'rating',
-    'Most Reviewed': 'review_count'
-}
 
 class SearchBar extends React.Component {
-    renderSortOptions() {
-        return Object.keys(sortByOptions).map(sbo => {
-            let sortByOptionsValue = sortByOptions[sbo]
-            return (
-                <li key={sortByOptionsValue}>{sbo}</li>
-            )
-        })
-    }
-
     render() {
         return (
             <div className="SearchBar">
                 <div className="SearchBar-sort-options">
                     <ul>
-                        {this.renderSortOptions()}
+                        <li className="px-5">Best Match</li>
+                        <li className="px-5">Highest Rated</li>
+                        <li className="px-5">Most Reviewed</li>
                     </ul>
                 </div>
                 <div className="SearchBar-fields">

@@ -21,7 +21,7 @@ function HomePage() {
       Pop.error(error, '[get test businesses]')
     }
   }
-
+  // NOTE The [] at the end is very important, without it this function will run every second
   useEffect(() => {
     getTestBusinesses()
   }, [])
