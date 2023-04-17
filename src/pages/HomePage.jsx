@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import '../assets/scss/pages/HomePage.scss';
 import BusinessList from '../components/BusinessList.jsx';
+import HomePlaceHolder from '../components/HomePlaceHolder.jsx'
 import SearchBar from '../components/SearchBar.jsx';
 import { AppState } from "../AppState.js";
 import Pop from '../utils/Pop.js';
@@ -32,9 +33,12 @@ function HomePage() {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <div className="container">
-          <BusinessList businesses={AppState.businesses} />
-        </div>
+        {AppState.businesses.length > 0 ? (
+          <div className="container">
+            <BusinessList businesses={AppState.businesses} />
+          </div>) : (
+          <HomePlaceHolder />
+        )}
       </div>
     </div>
   )

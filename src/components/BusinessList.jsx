@@ -3,6 +3,8 @@ import '../assets/scss/components/BusinessList.scss'
 import Business from './Business.jsx'
 import { AppState } from "../AppState.js";
 
+// NOTE this class is kind of unnecessary, but it makes the home page a little cleaner to look at
+
 class BusinessList extends React.Component {
     render() {
         return (
