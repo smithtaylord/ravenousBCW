@@ -9,6 +9,11 @@ class BusinessService {
         logger.log(res.data)
         AppState.businesses = res.data.businesses.map(b => new Business(b))
     }
+    async search(term, location, sortBy) {
+        const res = await yelpApi.get(`search?term=${term}&location=${location}&sort_by=${sortBy}`)
+        logger.log(res.data)
+        AppState.businesses = res.data.businesses.map(b => new Business(b))
+    }
 }
 
 export const businessService = new BusinessService()

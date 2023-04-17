@@ -1,12 +1,27 @@
 import React from "react";
 import '../assets/scss/components/SearchBar.scss'
 import { useState } from "react";
+import Pop from "../utils/Pop.js";
+import { businessService } from "../services/BusinessService.js";
 
 export default function SearchBar() {
+// NOTE --V--- This is the variable name
+// ---------------V-------- This is the function that can change the variable's name
 const [sortBy, setSortBy] = useState('best_match');
+const [term, setTerm] = useState('');
+const [location, setLocation] = useState('');
 
 function handleSort(category){
     setSortBy(category)
+}
+const search = async(e) => {
+    e.preventDefault();
+    try {
+      await businessService.search(term, location, sortBy)
+    }
+    catch (error){
+      Pop.error(error);
+    }
 }
 
 
@@ -26,13 +41,25 @@ function handleSort(category){
                             Most Reviewed</li>
                     </ul>
                 </div>
-                <div className="SearchBar-fields">
-                    <input placeholder="Search Businesses" />
-                    <input placeholder="Where?" />
-                </div>
-                <div className="SearchBar-submit">
-                    <a>Let's Go</a>
-                </div>
+                <form onSubmit={search}>
+          <div className="SearchBar-fields">
+            <input
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+              placeholder="Search Businesses"
+            />
+            <input
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Where?"
+            />
+          </div>
+          <div className="SearchBar-submit">
+            <button className="btn" type="submit">
+              Let&apos;s Go
+            </button>
+          </div>
+        </form>
             </div>
         </div>
     )
